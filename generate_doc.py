@@ -22,6 +22,7 @@
 import yaml
 import subprocess
 import sys
+from os import environ
 from datetime import datetime
 
 
@@ -55,8 +56,11 @@ def read_repositories(config_path):
 
 
 OUTPUT_TYPE = 'html'
+if 'INPUT_FORMAT' in environ:
+    OUTPUT_TYPE = environ.get('INPUT_FORMAT')
 if (len(sys.argv) > 1):
     OUTPUT_TYPE = sys.argv[1]
+
 
 CONFIG_PATH = './config.yml'
 now = datetime.now()

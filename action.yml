@@ -1,0 +1,10 @@
+name: 'TerosHDL Documentation Generator'
+description: "Generate documentation of HDL designs"
+inputs:
+  format:
+    description: 'Output format (either html or markdown)'
+    required: false
+    default: html
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
